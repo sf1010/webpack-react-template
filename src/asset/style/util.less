@@ -1,0 +1,21 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.pullLeft {
+  float: left;
+}
+
+.pullRight {
+  float: right;
+}
+
+.clearfix {
+  &:after,
+  &:before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
