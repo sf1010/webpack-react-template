@@ -6,7 +6,6 @@ import { renderRoutes } from 'react-router-config';
 import { AppContainer } from 'react-hot-loader';
 import routes from 'router';
 import { create } from 'store';
-import Layout from './layout';
 import 'asset/style/normalize.css';
 
 const ENV_IS_DEV = process.env.NODE_ENV === 'development';
@@ -17,11 +16,9 @@ const store = create({
 
 const Page = () => (
   <Provider store={ store }>
-    <Layout>
-      <HashRouter>
-        {renderRoutes(routes)}
-      </HashRouter>
-    </Layout>
+    <HashRouter>
+      {renderRoutes(routes)}
+    </HashRouter>
   </Provider>
 );
 

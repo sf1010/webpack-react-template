@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "webpack-react-template",
   "scripts": {
-    "build": "webpack --mode=production --config=webpack.config.js",
-    "dev": "webpack-dev-server --mode=development --config=webpack.config.js"
+    "build": "webpack --progress --mode=production --config=webpack.config.js",
+    "dev": "webpack-dev-server --progress --mode=development --config=webpack.config.js"
   },
   "keywords": ["webpack", "react", "template"],
   "author": "jinghang",
