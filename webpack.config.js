@@ -142,6 +142,7 @@ module.exports = (env, argv) => {
       compress: true,
       port: 8080,
       open: true,
+      historyApiFallback: true, // 浏览器路由时开启
     };
   } else if (argv.mode === 'production') {
     config.plugins.push(

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { AppContainer } from 'react-hot-loader';
 import routes from 'router';
@@ -16,9 +16,9 @@ const store = create({
 
 const Page = () => (
   <Provider store={ store }>
-    <HashRouter>
+    <BrowserRouter>
       {renderRoutes(routes)}
-    </HashRouter>
+    </BrowserRouter>
   </Provider>
 );
 
