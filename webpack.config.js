@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');// 定义html模板插件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');// 拆分合并css插件
-const CleanWebpackPlugin = require('clean-webpack-plugin');// 清理目录插件
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');// 清理目录插件
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config = {
@@ -51,12 +51,11 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
-              modules: true,
-              localIdentName: '[path][local]-[hash:base64:5]',
+              modules: {
+                localIdentName: '[path][local]-[hash:base64:5]',
+              },
             },
           },
-          'postcss-loader',
           'less-loader',
         ],
       },
@@ -119,7 +118,7 @@ const config = {
       chunkFilename: 'css/[name].[contenthash:7].chunk.css'
     }),
     // 每次编译清理目录
-    new CleanWebpackPlugin(['./dist']),
+    new CleanWebpackPlugin(),
   ],
   resolve: {
     alias: {
