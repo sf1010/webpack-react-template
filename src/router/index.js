@@ -3,17 +3,17 @@ import asyncComponent from './asyncComponent';
 
 const routes = [
   {
-    component: asyncComponent(() => import('layout')),
+    component: asyncComponent(() => import('@/layout')),
     routes: [
       {
         path: '/',
         exact: true,
-        component: asyncComponent(() => import('page/home')),
+        component: asyncComponent(() => import('@/page/home')),
       },
       {
         path: '/test',
         exact: true,
-        component: asyncComponent(() => import('page/test')),
+        component: asyncComponent(() => import('@/page/test')),
       },
     ],
   }

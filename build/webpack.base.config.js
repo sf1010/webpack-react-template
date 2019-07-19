@@ -2,14 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');// 定义html模板插件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');// 拆分合并css插件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');// 清理目录插件
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config = {
   entry: {
     app: './src/framework/index.js', // 入口1
   },
   output: {
-    path: path.resolve(__dirname, './dist'), // 出口目录
+    path: path.resolve(__dirname, '../dist'), // 出口目录
     filename: 'js/[name].[chunkhash:7].js', // 出口文件名，[name]表示通入口文件名
     chunkFilename: 'js/[name].[chunkhash:7].chunk.js',
   },
@@ -122,40 +121,9 @@ const config = {
   ],
   resolve: {
     alias: {
-      asset: path.resolve(__dirname, './src/asset'),
-      component: path.resolve(__dirname, './src/component'),
-      layout: path.resolve(__dirname, './src/layout'),
-      page: path.resolve(__dirname, './src/page'),
-      router: path.resolve(__dirname, './src/router'),
-      store: path.resolve(__dirname, './src/store'),
-      tool: path.resolve(__dirname, './src/tool'),
+      '@': path.resolve(__dirname, '../src'),
     },
   },
 };
 
-module.exports = (env, argv) => {
-  if (argv.mode === 'development') {
-    config.devServer = {
-      contentBase: path.resolve(__dirname, './dist'),
-      host: '127.0.0.1',
-      compress: true,
-      port: 8080,
-      open: true,
-      historyApiFallback: true, // 浏览器路由时开启
-    };
-  } else if (argv.mode === 'production') {
-    config.plugins.push(
-      // 压缩css
-      new OptimizeCssAssetsPlugin({
-        assetNameRegExp: /\.css$/g,
-        cssProcessor: require('cssnano'),
-        cssProcessorPluginOptions: {
-          preset: ['default', { discardComments: { removeAll: true } }],
-        },
-        canPrint: true
-      })
-    );
-  }
-
-  return config;
-};
+module.exports = config;
