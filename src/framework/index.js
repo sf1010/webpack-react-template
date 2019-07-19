@@ -6,7 +6,7 @@ import { renderRoutes } from 'react-router-config';
 import { AppContainer } from 'react-hot-loader';
 import routes from '@/router';
 import { create } from '@/store';
-import '@/asset/style/normalize.css';
+import '@/assets/style/normalize.css';
 
 const ENV_IS_DEV = process.env.NODE_ENV === 'development';
 

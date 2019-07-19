@@ -6,7 +6,7 @@ export default class Layout extends React.Component {
     const { route } = this.props;
     return (
       <React.Fragment>
-        {renderRoutes(route.routes)}
+        { renderRoutes(route.routes) }
       </React.Fragment>
     );
   }

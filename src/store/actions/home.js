@@ -1,7 +1,7 @@
 import {
   CREATE,
   REMOVE,
-} from '../constant/basic';
+} from '../constants/basic';
 
 export const create = item => {
   return {

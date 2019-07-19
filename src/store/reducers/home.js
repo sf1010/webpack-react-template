@@ -1,4 +1,4 @@
-import { LIST, CREATE, REMOVE } from '../constant/basic';
+import { LIST, CREATE, REMOVE } from '../constants/basic';
 
 export default function home(state, action) {
   const newState = Object.assign({}, state ? state : { list: [] });

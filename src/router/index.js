@@ -8,12 +8,12 @@ const routes = [
       {
         path: '/',
         exact: true,
-        component: asyncComponent(() => import('@/page/home')),
+        component: asyncComponent(() => import('@/pages/home')),
       },
       {
         path: '/test',
         exact: true,
-        component: asyncComponent(() => import('@/page/test')),
+        component: asyncComponent(() => import('@/pages/test')),
       },
     ],
   }

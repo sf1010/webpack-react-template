@@ -109,7 +109,7 @@ const config = {
       filename: '../dist/index.html',
       template: './src/view/index.html',
       hash: true,
-      // favicon: './src/asset/img/favicon.ico',
+      // favicon: './src/assets/img/favicon.ico',
     }),
     // css整合拆分
     new MiniCssExtractPlugin({
