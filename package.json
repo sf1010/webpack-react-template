@@ -8,7 +8,11 @@
     "lint": "eslint --ext .js,.jsx src",
     "fix": "eslint --ext .js,.jsx src --fix"
   },
-  "keywords": ["webpack", "react", "template"],
+  "keywords": [
+    "webpack",
+    "react",
+    "template"
+  ],
   "author": "jinghang",
   "license": "MIT",
   "repository": "git@github.com:sf1010/webpack-react-template.git",
@@ -45,6 +49,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
