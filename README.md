@@ -2,14 +2,14 @@
 这是一个基于webpack4构建react的模板，整合了react-router和redux，可以用作的搭建单页应用的骨架。
  
 ## 使用方法
-~~~
+```
 git clone git@github.com:sf1010/webpack-react-template.git
 cd webpack-react-template
 npm install
 npm run dev
 or
 npm run build
-~~~
+```
 
 ## 使用框架
 - [react](https://www.reactjs.org)
