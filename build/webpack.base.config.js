@@ -9,8 +9,8 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'), // 出口目录
-    filename: 'js/[name].[chunkhash:7].js', // 出口文件名，[name]表示通入口文件名
-    chunkFilename: 'js/[name].[chunkhash:7].chunk.js',
+    filename: 'js/[name].[hash:7].js', // 出口文件名，[name]表示通入口文件名
+    chunkFilename: 'js/[name].[hash:7].chunk.js',
   },
   module: {
     rules: [
@@ -113,8 +113,8 @@ const config = {
     }),
     // css整合拆分
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:7].css',
-      chunkFilename: 'css/[name].[contenthash:7].chunk.css'
+      filename: 'css/[name].[hash:7].css',
+      chunkFilename: 'css/[name].[hash:7].chunk.css'
     }),
     // 每次编译清理目录
     new CleanWebpackPlugin(),
