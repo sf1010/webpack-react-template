@@ -8,14 +8,12 @@ import routes from '@/router';
 import { create } from '@/store';
 import '@/assets/styles/normalize.css';
 
-const store = create({
-  greeting: 'hello',
-});
+const store = create();
 
 const Page = () => (
   <Provider store={ store }>
     <BrowserRouter>
-      {renderRoutes(routes)}
+      { renderRoutes(routes) }
     </BrowserRouter>
   </Provider>
 );

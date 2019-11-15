@@ -1,19 +1,18 @@
 import {
   CREATE,
   REMOVE,
-} from '../constants/basic';
+} from '../constants/home';
 
 export const create = item => {
   return {
     type: CREATE,
-    item
+    data: item,
   };
 };
 
 export const remove = id => {
   return {
     type: REMOVE,
-    id
+    data: id,
   };
 };
-

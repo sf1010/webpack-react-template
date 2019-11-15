@@ -4,26 +4,39 @@ import { connect } from 'react-redux';
 
 import styles from './index.less';
 
-@connect(state => ({
-  greeting: state.greeting,
+@connect(({ home }) => ({
+  home,
 }))
 class Home extends React.Component {
   state = {
     text: 'webpack',
   };
 
+  handleTestClick = () => {
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'CREATE',
+      data: {
+        id: 1,
+      },
+    });
+  };
+
   render() {
-    const { greeting } = this.props;
     const { text } = this.state;
 
-    return(
+    return (
       <div>
-        <h1 className={styles.hello}>
-          {greeting}-{text}-react!
+        <h1 className={ styles.hello }>
+          { text }-react!
         </h1>
         <Link to='/test'>
           go to test page
         </Link>
+        <br />
+        <br />
+        <button onClick={ this.handleTestClick }>click me!</button>
       </div>
     );
   }
